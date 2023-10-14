@@ -1,0 +1,127 @@
+:root {
+    --card-height: 75vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+body{
+    background: #FFF2D8;
+    font-size: 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}/*
+
+.container {
+    display:  flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: space-around;
+    height: 100vh;
+}*/
+
+
+.card {
+    background: url("../images/dadjokes-feature.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    color: rgba(212 0 255 / 0%);
+    /*color: #113946;*/
+    font-family: "Autour One", cursive, sans-serif;
+    /*
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+    height: 500px;
+
+    border: 10px solid #d8670a;*/
+  }
+  
+  .card:hover {
+    color: rgb(212 0 255 / 100%);
+    transition: color 1s;
+  }
+  .card:hover:before,
+  .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #ffb35d,
+      #ff9900 43%,
+      #bd2424
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #1be714,
+      #ff0000,
+      #e100ff
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  p {
+    display: block;
+  }
+.user {
+  color: white;
+  font-size: 24px;
+  font-family: "Titan One", cursive;
+}
